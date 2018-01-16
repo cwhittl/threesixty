@@ -98,6 +98,15 @@ const threesixty = (container, images, options) => {
     document.addEventListener('touchend', stopDrag)
     document.addEventListener('mouseup', stopDrag)
   }
+  
+  const disableInteractive = () => {
+     container.removeEventListener('touchstart', startDrag);
+     container.removeEventListener('mousedown', startDrag);
+     document.removeEventListener('touchmove', drag);
+     document.removeEventListener('mousemove', drag);
+     document.removeEventListener('touchend', stopDrag);
+     document.removeEventListener('mouseup', stopDrag);
+  }
 
   //------------------------------------------------------------------------------
   //
@@ -132,6 +141,7 @@ const threesixty = (container, images, options) => {
 
   return {
     init,
+    disableInteractive,
     previous,
     next,
     isInteractive,
