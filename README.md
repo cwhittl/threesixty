@@ -52,7 +52,7 @@ You can also provide an `options` object. Here's an **overview of the default va
 ```js
 threesixty(container, images, {
   interactive: true,
-  currentImage: 0
+  currentFrame: 0
 });
 ```
 
